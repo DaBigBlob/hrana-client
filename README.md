@@ -8,9 +8,9 @@
 
 This package implements a Hrana client for TypeScript. Hrana is the protocol for connecting to sqld using WebSocket or HTTP.
 
-> This package is intended mostly for internal use. Consider using the [`libsq-client`][libsql-client] package, which will use Hrana automatically.
+> This package is intended mostly for internal use. Consider using the [`libsql-client`][libsql-client] package, which will use Hrana automatically.
 
-[libsql-client]: https://www.npmjs.com/package/libsq-client
+[libsql-client]: https://www.npmjs.com/package/libsql-client
 
 ## Usage
 
