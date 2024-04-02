@@ -8,8 +8,10 @@ import { WsClient } from "./ws/client.js";
 import { ProtocolVersion } from "./client.js";
 
 export { WebSocket } from "@libsql/isomorphic-ws";
-export type { RequestInit, Response } from "@libsql/isomorphic-fetch";
-export { fetch, Request, Headers } from "@libsql/isomorphic-fetch";
+import RequestInit from "cross-fetch"
+export type RequestInit = typeof RequestInit;
+export type { Response } from "cross-fetch";
+export { fetch, Request, Headers } from "cross-fetch";
 
 export type { ProtocolVersion, ProtocolEncoding } from "./client.js";
 export { Client } from "./client.js";

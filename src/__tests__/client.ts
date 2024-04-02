@@ -1,5 +1,5 @@
-import type { Response } from "@libsql/isomorphic-fetch";
-import { fetch, Request } from "@libsql/isomorphic-fetch";
+import type { Response } from "cross-fetch";
+import { fetch, Request } from "cross-fetch";
 
 import * as hrana from "..";
 
@@ -390,7 +390,7 @@ test("concurrent operations are correctly ordered", withClient(async (c) => {
         await s.run(["INSERT INTO t VALUES (?, ?)", [streamId, value]]);
 
         const promises: Array<Promise<hrana.ValueResult>> = [];
-        const expectedValues = [];
+        const expectedValues: any[] = [];
         for (let i = 0; i < 10; ++i) {
             const promise = s.queryValue([
                 "UPDATE t SET value = value || ? WHERE stream = ? RETURNING value",
@@ -408,7 +408,7 @@ test("concurrent operations are correctly ordered", withClient(async (c) => {
         s.close();
     }
 
-    const promises = [];
+    const promises: any[] = [];
     for (let i = 0; i < 10; ++i) {
         promises.push(stream(i));
     }
@@ -698,7 +698,7 @@ for (const useCursor of [false, true]) {
             const s = c.openStream();
             const batch = s.batch(useCursor);
 
-            const proms = [];
+            const proms: any[] = [];
             for (let i = 0; i < 1000; ++i) {
                 proms.push(batch.step().queryValue(["SELECT 10*?", [i]]));
             }
@@ -714,7 +714,7 @@ for (const useCursor of [false, true]) {
             const s = c.openStream();
             const batch = s.batch(useCursor);
 
-            const proms = [];
+            const proms: any[] = [];
             for (let i = 0; i < 100; ++i) {
                 const sql = `
                     WITH RECURSIVE t (a) AS (SELECT 1 UNION ALL SELECT a+1 FROM t)
@@ -735,7 +735,7 @@ for (const useCursor of [false, true]) {
             const s = c.openStream();
             const batch = s.batch(useCursor);
 
-            const proms = [];
+            const proms: any[] = [];
             for (let i = 0; i < 100; ++i) {
                 proms.push(batch.step().queryValue(["SELECT 10*?", [i]]));
             }
@@ -755,8 +755,8 @@ for (const useCursor of [false, true]) {
             await s.run("CREATE TABLE t (a)");
             await s.run("INSERT INTO t VALUES (0)");
 
-            const updateProms = [];
-            const batchProms = [];
+            const updateProms: any[] = [];
+            const batchProms: any[] = [];
             for (let i = 0; i < 100; ++i) {
                 const batch = s.batch(useCursor);
                 for (let j = 0; j < 20; ++j) {

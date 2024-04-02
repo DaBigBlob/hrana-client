@@ -1,4 +1,5 @@
-import type { Response, ReadableStreamDefaultReader } from "@libsql/isomorphic-fetch";
+import type { Response } from "cross-fetch";
+import ReadableStreamDefaultReader from "cross-fetch";
 
 import { ByteQueue } from "../byte_queue.js";
 import type { ProtocolEncoding } from "../client.js";
