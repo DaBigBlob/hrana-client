@@ -14,7 +14,8 @@
   },
   "homepage": "https://github.com/libsql/hrana-client-ts",
   "authors": [
-    "Jan Špaček <honza@chiselstrike.com>"
+    "Jan Špaček <honza@chiselstrike.com>",
+    "LocalBox Crox (DaBigBlov) <libsql@hman.io>"
   ],
   "license": "MIT",
   "type": "module",
