@@ -330,7 +330,7 @@ export class HttpStream extends Stream implements SqlOwner {
         try {
             const request = createRequest();
             const fetch = this.#fetch;
-            promise = fetch(request);
+            promise = fetch(request, {method: request.method});
         } catch (error) {
             promise = Promise.reject(error);
         }
