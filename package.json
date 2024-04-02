@@ -1,6 +1,6 @@
 {
   "name": "hrana-client",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "keywords": [
     "hrana",
     "libsql",
@@ -10,9 +10,9 @@
   "description": "Hrana client for connecting to sqld over HTTP or WebSocket",
   "repository": {
     "type": "git",
-    "url": "github:libsql/hrana-client-ts"
+    "url": "github:DaBigBlob/hrana-client"
   },
-  "homepage": "https://github.com/libsql/hrana-client-ts",
+  "homepage": "https://github.com/DaBigBlob/hrana-client",
   "authors": [
     "Jan Špaček <honza@chiselstrike.com>",
     "LocalBox Crox (DaBigBlov) <libsql@hman.io>"
